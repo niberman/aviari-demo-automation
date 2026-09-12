@@ -1,0 +1,35 @@
+{
+  "name": "aviari-demo-automation",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/check-isolation.mjs && node scripts/lint-copy.mjs && tsc --noEmit && vite build && node scripts/copy-preview.mjs",
+    "preview": "vite preview",
+    "test": "node --test tests/unit.test.mjs",
+    "e2e": "node scripts/e2e.mjs",
+    "capture": "node scripts/capture.mjs",
+    "pretest": "esbuild src/demo/seed.ts src/demo/program.ts src/demo/pdf.ts --bundle --outdir=.test-build --format=esm --out-extension:.js=.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.5",
+    "@fontsource-variable/jetbrains-mono": "^5.2.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^5.0.0",
+    "ffmpeg-static": "^5.2.0",
+    "lighthouse": "^12.8.0",
+    "pdfjs-dist": "^4.10.38",
+    "playwright": "^1.55.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.1.0"
+  }
+}

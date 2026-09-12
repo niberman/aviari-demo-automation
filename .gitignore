@@ -1,0 +1,8 @@
+node_modules
+dist
+.vercel
+shots
+*.log
+.DS_Store
+.test-build
+frames
